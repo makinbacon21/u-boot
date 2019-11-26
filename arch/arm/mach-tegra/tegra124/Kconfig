@@ -10,6 +10,13 @@ config TARGET_APALIS_TK1
 	select CPU_V7_HAS_NONSEC
 	select CPU_V7_HAS_VIRT
 
+config TARGET_ARDBEG
+	bool "NVIDIA Tegra124 Ardbeg board"
+	select ARCH_SUPPORT_PSCI
+	select BOARD_LATE_INIT
+	select CPU_V7_HAS_NONSEC
+	select CPU_V7_HAS_VIRT
+
 config TARGET_JETSON_TK1
 	bool "NVIDIA Tegra124 Jetson TK1 board"
 	select ARCH_SUPPORT_PSCI
@@ -50,6 +57,7 @@ config SYS_SOC
 	default "tegra124"
 
 source "board/cei/cei-tk1-som/Kconfig"
+source "board/nvidia/ardbeg/Kconfig"
 source "board/nvidia/jetson-tk1/Kconfig"
 source "board/nvidia/nyan-big/Kconfig"
 source "board/nvidia/venice2/Kconfig"
